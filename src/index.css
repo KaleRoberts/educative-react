@@ -11,3 +11,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body,
+html,
+body * {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  margin: 0;
+}
+
+.Context {
+  font-family: sans-serif;
+  margin: auto;
+  padding: 1em;
+  text-align: center;
+  min-height: 100vh;
+  transition: background-color 0.2s;
+}
+
+.Context.Dark {
+  background-color: #282c34;
+  color: white;
+}
+
+.Context.Light {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.Context.Grey {
+  background-color: #555555;
+  color: white;
+}
+
+button, select {
+  font-size: 1em;
+  margin: 0.5em 0.25em;
+  padding: 0.25em 1em;
+}
+
+.settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.secondary {
+  background-color: transparent;
+  border: 2px solid;
+}

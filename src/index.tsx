@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Messages from './Messages';
+import Context from './Context';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <Messages />
+    <Context />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+// import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [message, setMessage] = useState('');
+
+  const [name, setName ] = useState('');
+  const [email, setEmail ] = useState('');
+
+  useEffect(() => {
+    if(!message && count > 5) {
+      setMessage(`Wow... you are on a clicking spree`);
+    }
+  }, [count, message]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>Current count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+
+      <button onClick={() => setCount(count- 1)}>Decrement</button>
+
+      {message}
+
+      <button onClick={() => {
+        setCount(0);
+        setMessage(``);
+      }}>RESET</button>
+
+      <div>
+        <input value={name} onChange={event => setName(event.target.value)} />
+        <input value={email} onChange={event => setEmail(event.target.value)} />
+
+        <p>Name {name}</p>
+        <p>Email {email}</p>
+      </div>
     </div>
   );
 }
